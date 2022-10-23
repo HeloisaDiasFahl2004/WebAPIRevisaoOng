@@ -6,11 +6,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPIRevisãoOng.Service;
+using WebAPIRevisãoOng.Utils;
 
 namespace WebAPIRevisãoOng
 {
@@ -32,6 +35,14 @@ namespace WebAPIRevisãoOng
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIRevisãoOng", Version = "v1" });
             });
+
+            services.Configure<DatabaseSettings>(Configuration.GetSection(nameof(DatabaseSettings)));
+            services.AddSingleton<IDatabaseSettings>(sp => sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
+
+            services.AddSingleton<PetService>();
+            services.AddSingleton<PersonService>();
+            services.AddSingleton<AddressService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

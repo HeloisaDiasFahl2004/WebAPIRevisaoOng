@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPIRevisãoOng.Controllers
 {
-    [Route("person[controller]")]
+    [Route("address[controller]")]
     [ApiController]
-    public class PersonController : ControllerBase
+    public class AddressController : ControllerBase
     {
     }
 }
