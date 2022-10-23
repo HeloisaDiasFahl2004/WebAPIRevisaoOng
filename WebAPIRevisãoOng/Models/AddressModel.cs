@@ -10,5 +10,6 @@ namespace WebAPIRevisãoOng.Models
         [Key]
         public string IdAddress { get; set; }
         public string Cep { get; set; }
+        public string Number { get; set; }
     }
 }
