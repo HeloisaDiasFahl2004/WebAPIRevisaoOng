@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using WebAPIRevisãoOng.Models;
 using WebAPIRevisãoOng.Service;
 
@@ -24,6 +25,9 @@ namespace WebAPIRevisãoOng.Controllers
             if (address == null) return NotFound();
             return Ok(address);
         }
+        [HttpGet]
+        public ActionResult<List<AddressModel>> GetAll() => _addressService.GetAll();
+        
         #endregion
 
         #region Post

@@ -1,4 +1,5 @@
 ﻿using MongoDB.Driver;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using WebAPIRevisãoOng.Models;
@@ -29,6 +30,7 @@ namespace WebAPIRevisãoOng.Service
             string message = streamReader.ReadToEnd();
             return message;
         }
+        public List<AddressModel> GetAll() => _address.Find<AddressModel>(address => true).ToList();
         #endregion
 
         #region Create
