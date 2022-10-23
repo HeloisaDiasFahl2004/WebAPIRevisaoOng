@@ -34,9 +34,9 @@ namespace WebAPIRevisãoOng.Service
         public PetModel GetOnePetByChip(string chip) => _pet.Find<PetModel>(petModel=> petModel.Chip == chip).FirstOrDefault();
         #endregion
 
-        #region Update
-        public void Update(string chip, PetModel pet) => _pet.ReplaceOne(pet => pet.Chip == chip,pet);
+        //#region Update
+        //public void Update(string chip, PetModel pet) => _pet.ReplaceOne(pet => pet.Chip == chip,pet);
     
-        #endregion  
+        //#endregion  
     }
 }

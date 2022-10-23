@@ -42,16 +42,16 @@ namespace WebAPIRevisãoOng.Controllers
         }
         #endregion
 
-        #region Put
-        [HttpPut]
-        public ActionResult<PetModel> Put(PetModel petIn, string chip)
-        {
-            var pet = _petService.GetOnePetByChip(chip);
-            if (pet == null) return NotFound();
-            petIn.Chip = chip;
-            _petService.Update(pet.Chip, petIn);
-            return NoContent();
-        }
-        #endregion
+        //#region Put
+        //[HttpPut]
+        //public ActionResult<PetModel> Put(PetModel petIn, string chip)
+        //{
+        //    var pet = _petService.GetOnePetByChip(chip);
+        //    if (pet == null) return NotFound();
+        //    petIn.Chip = chip;
+        //    _petService.Update(pet.Chip, petIn);
+        //    return NoContent();
+        //}
+        //#endregion
     }
 }
