@@ -13,7 +13,7 @@ namespace WebAPIRevisãoOng.Models
         [Key]
         public string Id { get; set; }
         public string Name { get; set; }
-        public List<PetModel> Pets { get; set; }
-        public AddressModel Address { get; set; }
+        public PetModel Pet{ get; set; }
+        public AddressModel Address{ get; set; }
     }
 }
